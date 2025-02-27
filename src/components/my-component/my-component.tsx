@@ -1,5 +1,5 @@
 import { Component, Prop, h } from '@stencil/core';
-import { format } from '../../utils/utils';
+
 
 @Component({
   tag: 'my-component',
@@ -22,11 +22,12 @@ export class MyComponent {
    */
   @Prop() last: string;
 
-  private getText(): string {
-    return format(this.first, this.middle, this.last);
+  componentWillLoad() {
+    // Ensure Quill is available
+  
   }
 
   render() {
-    return <div>Hello, World! I'm {this.getText()}</div>;
+    return <text-editor   ></text-editor>;
   }
 }

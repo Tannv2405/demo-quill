@@ -20,6 +20,8 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface TextEditor {
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +30,15 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLTextEditorElement extends Components.TextEditor, HTMLStencilElement {
+    }
+    var HTMLTextEditorElement: {
+        prototype: HTMLTextEditorElement;
+        new (): HTMLTextEditorElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "text-editor": HTMLTextEditorElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +56,11 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface TextEditor {
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "text-editor": TextEditor;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +68,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "text-editor": LocalJSX.TextEditor & JSXBase.HTMLAttributes<HTMLTextEditorElement>;
         }
     }
 }

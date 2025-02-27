@@ -46,5 +46,9 @@
     "jest-cli": "^29.7.0",
     "puppeteer": "^21.9.0"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "quill": "^2.0.3",
+    "stencil-quill": "^11.0.0"
+  }
 }
